@@ -1,10 +1,13 @@
-package com.distinct_words.distinct_words_in_list;
+package com.distinctwords;
 
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.junit.Test;
+
+import com.distinctwords.DistinctWordInSentence;
+import com.distinctwords.WordTallyPrinter;
 
 import junit.framework.TestCase;
 
@@ -30,7 +33,7 @@ public class DistinctWordInSentenceTest
 		String testString =  "This is a statement, and so is this.";
 		Map tallyMap = DistinctWordInSentence.listOfWordsWithTally(testString);
 		
-		PrintWordTallyToConsole.printWordTally(tallyMap);
+		WordTallyPrinter.printWordTally(tallyMap);
 		
 		assertEquals(6, tallyMap.size());
 		
@@ -58,7 +61,7 @@ public class DistinctWordInSentenceTest
 		String testString =  "";
 		Map tallyMap = DistinctWordInSentence.listOfWordsWithTally(testString);
 		
-		PrintWordTallyToConsole.printWordTally(tallyMap);
+		WordTallyPrinter.printWordTally(tallyMap);
 		assertEquals(0, tallyMap.size());
 	}
 	
@@ -67,7 +70,7 @@ public class DistinctWordInSentenceTest
 		String testString =  null;
         Map tallyMap = DistinctWordInSentence.listOfWordsWithTally(testString);
 		
-        PrintWordTallyToConsole.printWordTally(tallyMap);
+        WordTallyPrinter.printWordTally(tallyMap);
 		assertEquals(0, tallyMap.size());
 	}
 	
@@ -76,7 +79,7 @@ public class DistinctWordInSentenceTest
 		String testString =  ", . , @ & ^ * .";
         Map tallyMap = DistinctWordInSentence.listOfWordsWithTally(testString);
 		
-        PrintWordTallyToConsole.printWordTally(tallyMap);
+        WordTallyPrinter.printWordTally(tallyMap);
 		assertEquals(0, tallyMap.size());
 	}
 	
@@ -94,7 +97,7 @@ public class DistinctWordInSentenceTest
 		String testString =  "i'm  100 years Old";
         Map tallyMap = DistinctWordInSentence.listOfWordsWithTally(testString);
 		
-        PrintWordTallyToConsole.printWordTally(tallyMap);
+        WordTallyPrinter.printWordTally(tallyMap);
 		assertEquals(3, tallyMap.size());
 		
 		assertEquals(1, tallyMap.get("i'm"));
@@ -114,7 +117,7 @@ public class DistinctWordInSentenceTest
 		String testString =  "TeSt AbNoRmAl test String As InPut, To Prove The Logic";
 		Map tallyMap = DistinctWordInSentence.listOfWordsWithTally(testString);
 			
-		PrintWordTallyToConsole.printWordTally(tallyMap);
+		WordTallyPrinter.printWordTally(tallyMap);
 		assertEquals(9, tallyMap.size());
 		
 		assertEquals(2, tallyMap.get("test"));

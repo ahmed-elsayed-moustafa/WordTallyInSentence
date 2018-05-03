@@ -1,10 +1,10 @@
-package com.distinct_words.distinct_words_in_list;
+package com.distinctwords;
 
 import java.util.Map;
 
-public class PrintWordTallyToConsole {
+public class WordTallyPrinter {
 	
-	public static String DIVIDER =" - ";
+	private final static String DIVIDER =" - ";
 
 	public static void printWordTally(Map<String , Integer> tallyMap) {
 		for(String word: tallyMap.keySet()) {

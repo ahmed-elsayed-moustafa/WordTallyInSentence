@@ -1,4 +1,4 @@
-package com.distinct_words.distinct_words_in_list;
+package com.distinctwords;
 
 import java.util.LinkedHashMap;
 import java.util.regex.Pattern;
@@ -8,13 +8,11 @@ public class DistinctWordInSentence {
 	private static Pattern invalidSentencePattern = Pattern.compile("(\\s*[\\W\\d]*\\s*)*");
 	private static Pattern numberOrNonletterPattern = Pattern.compile("[\\W\\d]+");
 
+	
 	public static LinkedHashMap<String, Integer> listOfWordsWithTally(final String sentence) {
-		return listOfWordsWithTally(new LinkedHashMap<String, Integer>(), sentence);
-	}
 
-	private static LinkedHashMap<String, Integer> listOfWordsWithTally(LinkedHashMap<String, Integer> tallyMap,
-			String sentence) {
-
+		LinkedHashMap<String, Integer> tallyMap = new LinkedHashMap<String, Integer>();
+	
 		if (sentence == null || sentence.isEmpty()) {
 			return tallyMap;
 		}
