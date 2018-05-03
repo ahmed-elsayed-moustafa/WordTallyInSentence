@@ -3,12 +3,7 @@ package com.distinctwords;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
 import org.junit.Test;
-
-import com.distinctwords.DistinctWordInSentence;
-import com.distinctwords.WordTallyPrinter;
-
 import junit.framework.TestCase;
 
 /**
@@ -88,7 +83,7 @@ public class DistinctWordInSentenceTest
 		String testString =  "333 6 7 2 9 3 1 1";
         Map tallyMap = DistinctWordInSentence.listOfWordsWithTally(testString);
 		
-        PrintWordTallyToConsole.printWordTally(tallyMap);
+        WordTallyPrinter.printWordTally(tallyMap);
 		assertEquals(0, tallyMap.size());
 	}
 	
@@ -145,6 +140,5 @@ public class DistinctWordInSentenceTest
 		assertEquals(keys.get(8), "logic");
 		
 	}
-	
-	
+		
 }

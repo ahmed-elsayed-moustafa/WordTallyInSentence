@@ -8,11 +8,10 @@ public class DistinctWordInSentence {
 	private static Pattern invalidSentencePattern = Pattern.compile("(\\s*[\\W\\d]*\\s*)*");
 	private static Pattern numberOrNonletterPattern = Pattern.compile("[\\W\\d]+");
 
-	
 	public static LinkedHashMap<String, Integer> listOfWordsWithTally(final String sentence) {
 
 		LinkedHashMap<String, Integer> tallyMap = new LinkedHashMap<String, Integer>();
-	
+
 		if (sentence == null || sentence.isEmpty()) {
 			return tallyMap;
 		}
