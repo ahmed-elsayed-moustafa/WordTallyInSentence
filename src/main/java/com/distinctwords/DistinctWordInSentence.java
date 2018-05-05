@@ -5,26 +5,19 @@ import java.util.regex.Pattern;
 
 public class DistinctWordInSentence {
 
-	private static Pattern invalidSentencePattern = Pattern.compile("(\\s*[\\W\\d]*\\s*)*");
-	private static Pattern numberOrNonletterPattern = Pattern.compile("[\\W\\d]+");
-
 	public static LinkedHashMap<String, Integer> listOfWordsWithTally(final String sentence) {
 
 		LinkedHashMap<String, Integer> tallyMap = new LinkedHashMap<String, Integer>();
 
-		if (sentence == null || sentence.isEmpty()) {
+		if (sentence == null || sentence.isEmpty() || UtilityPattern.invalidSentencePattern.matcher(sentence).matches()) {
 			return tallyMap;
 		}
-
-		if (invalidSentencePattern.matcher(sentence).matches()) {
-			return tallyMap;
-		}
-
-		String[] words = sentence.toLowerCase().split("\\s+");
+		
+		String[] words = UtilityPattern.splitSentence.split(sentence.toLowerCase());
 
 		for (String word : words) {
 
-			if (numberOrNonletterPattern.matcher(word).matches()) {
+			if (UtilityPattern.numberOrNonletterPattern.matcher(word).matches()) {
 				continue;
 			}
 
@@ -42,6 +35,6 @@ public class DistinctWordInSentence {
 	}
 
 	private static String filterPunctuationAtEndOfWord(String word) {
-		return word.replaceAll("[\\W]$", "");
+		return UtilityPattern.punctuationAtTheEndOfString.matcher(word).replaceAll("");
 	}
 }
