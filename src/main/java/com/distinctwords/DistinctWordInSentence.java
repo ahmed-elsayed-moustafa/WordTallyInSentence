@@ -1,7 +1,6 @@
 package com.distinctwords;
 
 import java.util.LinkedHashMap;
-import java.util.regex.Pattern;
 
 public class DistinctWordInSentence {
 
@@ -9,10 +8,11 @@ public class DistinctWordInSentence {
 
 		LinkedHashMap<String, Integer> tallyMap = new LinkedHashMap<String, Integer>();
 
-		if (sentence == null || sentence.isEmpty() || UtilityPattern.invalidSentencePattern.matcher(sentence).matches()) {
+		if (sentence == null || sentence.isEmpty()
+				|| UtilityPattern.invalidSentencePattern.matcher(sentence).matches()) {
 			return tallyMap;
 		}
-		
+
 		String[] words = UtilityPattern.splitSentence.split(sentence.toLowerCase());
 
 		for (String word : words) {
