@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 
 /**
  * 
- * Precompiled patterns, to ensure the compilation occurs only once
+ * Precompiled patterns, to ensure the compilation occurs only once.
  * @author Ahmed
  */
 public class UtilityPattern {

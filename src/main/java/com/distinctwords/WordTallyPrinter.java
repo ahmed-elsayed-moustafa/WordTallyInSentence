@@ -2,6 +2,10 @@ package com.distinctwords;
 
 import java.util.Map;
 
+/**
+ * Used to print the contents of the returned Map. 
+ * @author Ahmed
+ */
 public class WordTallyPrinter {
 
 	private final static String DIVIDER = " - ";
