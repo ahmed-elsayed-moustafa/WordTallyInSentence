@@ -23,7 +23,7 @@ public class DistinctWordInSentenceTest extends TestCase {
 	@Test
 	public void testingNormalSentence() {
 		String testString = "This is a statement, and so is this.";
-		Map tallyMap = DistinctWordInSentence.listOfWordsWithTally(testString);
+		Map tallyMap = DistinctWordInSentence.isSentenceValid(testString);
 
 		WordTallyPrinter.printWordTally(tallyMap);
 
@@ -50,7 +50,7 @@ public class DistinctWordInSentenceTest extends TestCase {
 	@Test
 	public void testingEmptyString() {
 		String testString = "";
-		Map tallyMap = DistinctWordInSentence.listOfWordsWithTally(testString);
+		Map tallyMap = DistinctWordInSentence.isSentenceValid(testString);
 
 		WordTallyPrinter.printWordTally(tallyMap);
 		assertEquals(0, tallyMap.size());
@@ -59,7 +59,7 @@ public class DistinctWordInSentenceTest extends TestCase {
 	@Test
 	public void testingNullString() {
 		String testString = null;
-		Map tallyMap = DistinctWordInSentence.listOfWordsWithTally(testString);
+		Map tallyMap = DistinctWordInSentence.isSentenceValid(testString);
 
 		WordTallyPrinter.printWordTally(tallyMap);
 		assertEquals(0, tallyMap.size());
@@ -68,7 +68,7 @@ public class DistinctWordInSentenceTest extends TestCase {
 	@Test
 	public void testingPunctuationString() {
 		String testString = ", . , @ & ^ * .";
-		Map tallyMap = DistinctWordInSentence.listOfWordsWithTally(testString);
+		Map tallyMap = DistinctWordInSentence.isSentenceValid(testString);
 
 		WordTallyPrinter.printWordTally(tallyMap);
 		assertEquals(0, tallyMap.size());
@@ -77,7 +77,7 @@ public class DistinctWordInSentenceTest extends TestCase {
 	@Test
 	public void testingNumbersString() {
 		String testString = "333 6 7 2 9 3 1 1";
-		Map tallyMap = DistinctWordInSentence.listOfWordsWithTally(testString);
+		Map tallyMap = DistinctWordInSentence.isSentenceValid(testString);
 
 		WordTallyPrinter.printWordTally(tallyMap);
 		assertEquals(0, tallyMap.size());
@@ -86,7 +86,7 @@ public class DistinctWordInSentenceTest extends TestCase {
 	@Test
 	public void testingNumbersAndWordsInString() {
 		String testString = "i'm  100 years Old";
-		Map tallyMap = DistinctWordInSentence.listOfWordsWithTally(testString);
+		Map tallyMap = DistinctWordInSentence.isSentenceValid(testString);
 
 		WordTallyPrinter.printWordTally(tallyMap);
 		assertEquals(3, tallyMap.size());
@@ -106,7 +106,7 @@ public class DistinctWordInSentenceTest extends TestCase {
 	@Test
 	public void testingWordsMixedWithCapitalString() {
 		String testString = "TeSt AbNoRmAl test String As InPut, To Prove The Logic";
-		Map tallyMap = DistinctWordInSentence.listOfWordsWithTally(testString);
+		Map tallyMap = DistinctWordInSentence.isSentenceValid(testString);
 
 		WordTallyPrinter.printWordTally(tallyMap);
 		assertEquals(9, tallyMap.size());

@@ -9,12 +9,27 @@ import java.util.regex.Pattern;
  */
 public class UtilityPattern {
 
-	public static final Pattern invalidSentencePattern = Pattern.compile("(\\s*[\\W\\d]*\\s*)*");
+	private final static Pattern invalidSentencePattern = Pattern.compile("(\\s*[\\W\\d]*\\s*)*");
 	
-	public static final Pattern numberOrNonletterPattern = Pattern.compile("[\\W\\d]+");
+	private final static Pattern numberOrNonletterPattern = Pattern.compile("[\\W\\d]+");
 	
-	public static final Pattern splitSentence = Pattern.compile("\\s+");
+	private final static Pattern splitSentence = Pattern.compile("\\s+");
 	
-	public static final Pattern punctuationAtTheEndOfString = Pattern.compile("[\\W]$");
-
+	private final static Pattern punctuationAtTheEndOfString = Pattern.compile("[\\W]$");
+	
+	public static String[] splitWordsWithPattern(String sentence) {
+		return splitSentence.split(sentence);
+	}
+	
+	public static boolean checkStringIsValid(String sentence) {
+		return invalidSentencePattern.matcher(sentence).matches();
+	}
+	
+	public static String removePunctuationAtTheEnd(String word) {
+		return punctuationAtTheEndOfString.matcher(word).replaceAll("");
+	}
+	
+	public static boolean checkIfNumberOrNonLetter(String word) {
+		return numberOrNonletterPattern.matcher(word).matches();
+	}
 }
