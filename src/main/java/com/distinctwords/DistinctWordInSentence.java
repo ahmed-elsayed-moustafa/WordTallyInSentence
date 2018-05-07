@@ -35,7 +35,7 @@ public class DistinctWordInSentence {
 	 * @param sentence
 	 * @return
 	 */
-	public static LinkedHashMap<String, Integer> isSentenceValid(final String sentence) {
+	public static LinkedHashMap<String, Integer> validateSentanceAndTally(final String sentence) {
 
 		if (sentence == null || sentence.isEmpty()
 				|| UtilityPattern.checkStringIsValid(sentence)) {
